@@ -11,10 +11,14 @@ public class Zombie : MonoBehaviour
     public float distanceTime;
     public float speed;
     public int health;
+<<<<<<< HEAD
     float dieTime = 1;
     bool isDead = false;
     bool isIdle = false;
     public float idleTime = 2;
+=======
+
+>>>>>>> 8ef17e686eb09b41114116e68191e3f68e9e64e4
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +33,7 @@ public class Zombie : MonoBehaviour
     {
         if (!isDead)
         {
+<<<<<<< HEAD
             if (isIdle && idleTime < 0)
             {
                 direction = direction * -1;
@@ -64,11 +69,17 @@ public class Zombie : MonoBehaviour
             {
                 Destroy(this.gameObject);
             }
+=======
+            direction = direction * -1;
+            _animator.SetInteger("Direction", direction);
+            timeInDirection = distanceTime;
+>>>>>>> 8ef17e686eb09b41114116e68191e3f68e9e64e4
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+<<<<<<< HEAD
         if (collision.tag == "PlayerProjectile")
         {
             health--;
@@ -82,4 +93,12 @@ public class Zombie : MonoBehaviour
 
     
 
+=======
+        if(collision.tag == "PlayerProjectile")
+        {
+            health--;
+            Debug.Log(health);
+        }
+    }
+>>>>>>> 8ef17e686eb09b41114116e68191e3f68e9e64e4
 }
